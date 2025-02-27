@@ -1,0 +1,30 @@
+version: '3.8'
+
+services:
+  clickhouse:
+    image: clickhouse/clickhouse-server:latest
+    container_name: some-clickhouse-server
+    restart: always
+    ports:
+      - "8123:8123"
+      - "9000:9000"
+    ulimits:
+      nofile:
+        soft: 262144
+        hard: 262144
+    volumes:
+      - clickhouse_data:/var/lib/clickhouse  # Данные ClickHouse
+    environment:
+      - CLICKHOUSE_DB=etl_database
+      - CLICKHOUSE_USER=super_secret_user
+      - CLICKHOUSE_PASSWORD=super_secret_passsword
+      - CLICKHOUSE_DEFAULT_ACCESS_MANAGEMENT=1  # Включаем систему управления пользователями
+    networks:
+      - clickhouse_net
+
+volumes:
+  clickhouse_data:
+
+networks:
+  clickhouse_net:
+
