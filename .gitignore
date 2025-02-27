@@ -1,3 +1,7 @@
+# user's files
+data_preparation/nonpermanent_users.csv
+data_preparation/permanent_users.csv
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
