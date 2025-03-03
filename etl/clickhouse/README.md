@@ -4,7 +4,7 @@
 
 ### Instructions for Deploying and Configuring ClickHouse
 
-**Without the entire project, for example, on VPS.**
+**Without the entire project, eg on VPS.**
 
 ### 📌 Installation
 
